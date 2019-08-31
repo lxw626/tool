@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.origin.tool.mapper.ModelMapper">
+  <resultMap id="BaseResultMap" type="com.origin.tool.entity.Model">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="model" jdbcType="VARCHAR" property="model" />
+    <result column="model_name" jdbcType="VARCHAR" property="modelName" />
+    <result column="model_tag" jdbcType="VARCHAR" property="modelTag" />
+    <result column="owner" jdbcType="VARCHAR" property="owner" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="createdtime" jdbcType="TIMESTAMP" property="createdtime" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from model
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.origin.tool.entity.Model">
+    insert into model (id, model, model_name, 
+      model_tag, owner, version, 
+      createdtime)
+    values (#{id,jdbcType=INTEGER}, #{model,jdbcType=VARCHAR}, #{modelName,jdbcType=VARCHAR}, 
+      #{modelTag,jdbcType=VARCHAR}, #{owner,jdbcType=VARCHAR}, #{version,jdbcType=INTEGER}, 
+      #{createdtime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.origin.tool.entity.Model">
+    update model
+    set model = #{model,jdbcType=VARCHAR},
+      model_name = #{modelName,jdbcType=VARCHAR},
+      model_tag = #{modelTag,jdbcType=VARCHAR},
+      owner = #{owner,jdbcType=VARCHAR},
+      version = #{version,jdbcType=INTEGER},
+      createdtime = #{createdtime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, model, model_name, model_tag, owner, version, createdtime
+    from model
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, model, model_name, model_tag, owner, version, createdtime
+    from model
+  </select>
+  <resultMap id="BaseResultMap" type="com.origin.tool.entity.Model">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="model" jdbcType="VARCHAR" property="model" />
+    <result column="model_name" jdbcType="VARCHAR" property="modelName" />
+    <result column="model_tag" jdbcType="VARCHAR" property="modelTag" />
+    <result column="owner" jdbcType="VARCHAR" property="owner" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="createdtime" jdbcType="TIMESTAMP" property="createdtime" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from model
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.origin.tool.entity.Model">
+    insert into model (id, model, model_name, 
+      model_tag, owner, version, 
+      createdtime)
+    values (#{id,jdbcType=INTEGER}, #{model,jdbcType=VARCHAR}, #{modelName,jdbcType=VARCHAR}, 
+      #{modelTag,jdbcType=VARCHAR}, #{owner,jdbcType=VARCHAR}, #{version,jdbcType=INTEGER}, 
+      #{createdtime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.origin.tool.entity.Model">
+    update model
+    set model = #{model,jdbcType=VARCHAR},
+      model_name = #{modelName,jdbcType=VARCHAR},
+      model_tag = #{modelTag,jdbcType=VARCHAR},
+      owner = #{owner,jdbcType=VARCHAR},
+      version = #{version,jdbcType=INTEGER},
+      createdtime = #{createdtime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, model, model_name, model_tag, owner, version, createdtime
+    from model
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, model, model_name, model_tag, owner, version, createdtime
+    from model
+  </select>
+  <resultMap id="BaseResultMap" type="com.origin.tool.entity.Model">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="model" jdbcType="VARCHAR" property="model" />
+    <result column="model_name" jdbcType="VARCHAR" property="modelName" />
+    <result column="model_tag" jdbcType="VARCHAR" property="modelTag" />
+    <result column="owner" jdbcType="VARCHAR" property="owner" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="createdtime" jdbcType="TIMESTAMP" property="createdtime" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from model
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.origin.tool.entity.Model">
+    insert into model (id, model, model_name, 
+      model_tag, owner, version, 
+      createdtime)
+    values (#{id,jdbcType=INTEGER}, #{model,jdbcType=VARCHAR}, #{modelName,jdbcType=VARCHAR}, 
+      #{modelTag,jdbcType=VARCHAR}, #{owner,jdbcType=VARCHAR}, #{version,jdbcType=INTEGER}, 
+      #{createdtime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.origin.tool.entity.Model">
+    update model
+    set model = #{model,jdbcType=VARCHAR},
+      model_name = #{modelName,jdbcType=VARCHAR},
+      model_tag = #{modelTag,jdbcType=VARCHAR},
+      owner = #{owner,jdbcType=VARCHAR},
+      version = #{version,jdbcType=INTEGER},
+      createdtime = #{createdtime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, model, model_name, model_tag, owner, version, createdtime
+    from model
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, model, model_name, model_tag, owner, version, createdtime
+    from model
+  </select>
+  <resultMap id="BaseResultMap" type="com.origin.tool.entity.Model">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="model" jdbcType="VARCHAR" property="model" />
+    <result column="model_name" jdbcType="VARCHAR" property="modelName" />
+    <result column="model_tag" jdbcType="VARCHAR" property="modelTag" />
+    <result column="owner" jdbcType="VARCHAR" property="owner" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="createdtime" jdbcType="TIMESTAMP" property="createdtime" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from model
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.origin.tool.entity.Model">
+    insert into model (id, model, model_name, 
+      model_tag, owner, version, 
+      createdtime)
+    values (#{id,jdbcType=INTEGER}, #{model,jdbcType=VARCHAR}, #{modelName,jdbcType=VARCHAR}, 
+      #{modelTag,jdbcType=VARCHAR}, #{owner,jdbcType=VARCHAR}, #{version,jdbcType=INTEGER}, 
+      #{createdtime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.origin.tool.entity.Model">
+    update model
+    set model = #{model,jdbcType=VARCHAR},
+      model_name = #{modelName,jdbcType=VARCHAR},
+      model_tag = #{modelTag,jdbcType=VARCHAR},
+      owner = #{owner,jdbcType=VARCHAR},
+      version = #{version,jdbcType=INTEGER},
+      createdtime = #{createdtime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, model, model_name, model_tag, owner, version, createdtime
+    from model
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, model, model_name, model_tag, owner, version, createdtime
+    from model
+  </select>
+</mapper>
