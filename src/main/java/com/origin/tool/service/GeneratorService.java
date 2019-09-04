@@ -49,12 +49,13 @@ public class GeneratorService {
             context.addAttribute("targetRuntime",mbg.getTargetRuntime());
         }
         // 配置要解析的表
-        List<Map<String, String>> tableAndEntitys = mbg.getTableAndEntitys();
-        if(tableAndEntitys.size()>0){
-            for (Map<String, String> tableAndEntity : tableAndEntitys) {
+//        List<Map<String, String>> tableAndEntitys = mbg.getTableAndEntitys();
+        List<MBG.TableConfig> tableConfigs = mbg.getTableNames();
+        if(tableConfigs.size()>0){
+            for (MBG.TableConfig tableConfig : tableConfigs) {
                 Element table = context.addElement("table");
-                table.addAttribute("tableName",tableAndEntity.get("tableName"));
-                table.addAttribute("domainObjectName",tableAndEntity.get("entityName"));
+                table.addAttribute("tableName",tableConfig.getTableName());
+                table.addAttribute("domainObjectName",tableConfig.getEntityName());
             }
         }
         // 配置连接
@@ -65,8 +66,8 @@ public class GeneratorService {
         if(mbg.getConnectionURL()!=null){
             jdbcConnection.addAttribute("connectionURL",mbg.getConnectionURL());
         }
-        if(mbg.getUserId()!=null){
-            jdbcConnection.addAttribute("userId",mbg.getUserId());
+        if(mbg.getUsername()!=null){
+            jdbcConnection.addAttribute("userId",mbg.getUsername());
         }
         if(mbg.getPassword()!=null){
             jdbcConnection.addAttribute("password",mbg.getPassword());

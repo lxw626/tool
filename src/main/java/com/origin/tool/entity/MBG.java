@@ -4,31 +4,46 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @Setter
 @Getter
 @ToString
 public class MBG {
-    private String projectPath = ".";
-    private String targetRuntime;
-    private String driverClass;
-    private String connectionURL;
-    private String userId;
-    private String password;
-    private String entityPackage;
-    private String entityPath = projectPath+"\\src\\main\\java";
-    private String mapperPackage;
-    private String mapperPath = projectPath+"\\src\\main\\java";
-    private String xmlPackage;
-    private String xmlPath = projectPath+"\\src\\main\\resources";
-    private List<Map<String,String>> tableAndEntitys = Collections.emptyList();
-    public void init(String projectPath){
-        this.setProjectPath(projectPath);
-        entityPath = projectPath+"\\src\\main\\java";
-        mapperPath = projectPath+"\\src\\main\\java";
-        xmlPath = projectPath+"\\src\\main\\resources";
+    private String driverClass = "com.mysql.jdbc.Driver";
+    private String connectionURL = "jdbc:mysql://localhost:3306/tool";
+    private String username = "root";
+    private String password = "root";
+    private String targetRuntime = "MyBatis3Simple";
+    private String entityPackage = "com.origin.tool.entity";
+    private String entityPath = "";
+    private String rootClass = "com.origin.tool.entity.BasicEntity";
+    private String mapperPackage = "com.origin.tool.mapper";
+    private String rootInterface = "com.origin.tool.mapper.BasicMapper";
+    private String mapperPath = "";
+    private String mapperType = "";
+    private String xmlPackage = "com.origin.tool.mapper";
+    private String xmlPath = "";
+    private Boolean serializableSwitch = true;
+    private Boolean toStringSwitch = true;
+    private Boolean commentSwitch = true;
+    private Boolean bigDecimalSwitch = true;
+    private Boolean trimStringSwitch = true;
+    private List<TableConfig> tableNames = new ArrayList<>();
+
+    public List<TableConfig> addTableName(TableConfig tableConfig) {
+        tableNames.add(tableConfig);
+        return tableNames;
+    }
+
+    @Setter
+    @Getter
+    @ToString
+    public class TableConfig {
+        private String tableName;
+        private String entityName;
+
     }
 }
+

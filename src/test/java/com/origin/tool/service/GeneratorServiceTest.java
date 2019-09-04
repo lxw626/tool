@@ -20,12 +20,6 @@ public class GeneratorServiceTest {
 
     @Test
     public void genertedByMyBatis() throws Exception {
-        MBG mbg = new MBG();
-        mbg.init("D:\\test");
-        System.out.println(mbg.getEntityPath());
-        System.out.println(mbg.getMapperPath());
-        System.out.println(mbg.getXmlPath());
-        mbg.setTargetRuntime("MyBatis3");
-        generatorService.genertedByMyBatis(mbg);
+        generatorService.genertedByMyBatis(null);
     }
 }
