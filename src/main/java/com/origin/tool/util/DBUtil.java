@@ -3,15 +3,14 @@ package com.origin.tool.util;
 import com.origin.tool.config.GConfig;
 import com.origin.tool.config.MyDataSource;
 import com.origin.tool.constant.ListConstant;
-import com.origin.tool.entity.ColumnInfo;
+import com.origin.tool.core.ColumnInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.jdbc.core.JdbcTemplate;
 
-import javax.sql.DataSource;
-import java.io.PrintWriter;
 import java.sql.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class DBUtil {
     private final static Logger LOGGER = LoggerFactory.getLogger(DBUtil.class);

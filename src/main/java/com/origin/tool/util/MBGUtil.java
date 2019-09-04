@@ -1,16 +1,17 @@
 package com.origin.tool.util;
 
-import com.origin.tool.entity.MBG;
+import com.origin.tool.core.MBG;
 import org.mybatis.generator.api.MyBatisGenerator;
 import org.mybatis.generator.config.*;
+import org.mybatis.generator.config.xml.ConfigurationParser;
 import org.mybatis.generator.internal.DefaultShellCallback;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MBGUtil {
     public static void generate(MBG mbg) throws Exception {
-
         List<String> warnings = new ArrayList<String>();
         boolean overwrite = true;
         Configuration config = new Configuration();
@@ -143,8 +144,8 @@ public class MBGUtil {
         }
         javaClientGeneratorConfiguration.addProperty("enableSubPackages", "false");
         context.setJavaClientGeneratorConfiguration(javaClientGeneratorConfiguration);
-        List<MBG.TableConfig> tableNames = mbg.getTableNames();
-        for (MBG.TableConfig  tableConfig: tableNames) {
+        List<MBG.TableConfig> tableNames = mbg.getTableConfigs();
+        for (MBG.TableConfig tableConfig : tableNames) {
             TableConfiguration tableConfiguration = new TableConfiguration(context);
             tableConfiguration.setTableName(tableConfig.getTableName());
             tableConfiguration.setCountByExampleStatementEnabled(true);
@@ -159,6 +160,16 @@ public class MBGUtil {
         }
         config.addContext(context);
 
+        DefaultShellCallback callback = new DefaultShellCallback(overwrite);
+        MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
+        myBatisGenerator.generate(null);
+    }
+    public static void generateWithXml() throws Exception {
+        List<String> warnings = new ArrayList<String>();
+        boolean overwrite = true;
+        File configFile = new File(".\\src\\main\\resources\\mbg.xml");
+        ConfigurationParser cp = new ConfigurationParser(warnings);
+        Configuration config = cp.parseConfiguration(configFile);
         DefaultShellCallback callback = new DefaultShellCallback(overwrite);
         MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
         myBatisGenerator.generate(null);

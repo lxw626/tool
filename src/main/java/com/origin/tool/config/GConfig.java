@@ -1,6 +1,7 @@
 package com.origin.tool.config;
 
-import com.origin.tool.entity.ColumnInfo;
+
+import com.origin.tool.core.ColumnInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,6 @@ public class GConfig {
     //数据库类型
     public static String DBType = "oracle";
     //全局主键配置(可选配置),如果指定则用指定的,如果没有指定则用获取到的第一个
-    public static final ColumnInfo pkColumn = new ColumnInfo("SID", "sid", "Integer", "DECIMAL");
 //    mysql数据库配置部分
 //    public static String DRIVER = "com.mysql.jdbc.Driver";
 //    public static String URL = "jdbc:mysql://localhost:3306/mytool?useUnicode=true&characterEncoding=utf8&useSSL=true";

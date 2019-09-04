@@ -1,4 +1,4 @@
-package com.origin.tool.mapper;
+package com.origin.tool.core;
 
 public interface BasicMapper {
 }

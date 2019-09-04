@@ -1,7 +1,7 @@
 package com.origin.tool.util;
 
 import com.origin.tool.config.GConfig;
-import com.origin.tool.entity.ColumnInfo;
+import com.origin.tool.core.ColumnInfo;
 import org.junit.Test;
 
 import java.util.List;
