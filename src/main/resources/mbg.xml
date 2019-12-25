@@ -8,7 +8,7 @@
         targetRuntime="MyBatis3Simple":生成简单版的CRUD
         MyBatis3:豪华版
      -->
-    <context id="DB2Tables" targetRuntime="MyBatis3Simple">
+    <context id="DB2Tables" targetRuntime="MyBatis3">
         <!-- 生成的Java文件的编码 -->
         <property name="javaFileEncoding" value="UTF-8"/>
         <!--实现Serializable接口-->
@@ -16,8 +16,14 @@
         <!--生成toString方法-->
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>
         <!-- 去除自动生成的注释 true:取消生成注释,false:生成注释 -->
-        <commentGenerator>
-            <property name="suppressAllComments" value="true"/>
+        <!--<commentGenerator>
+            <property name="suppressAllComments" value="false"/>
+            <property name="addRemarkComments" value="true"/>
+        </commentGenerator>-->
+        <!-- 自定义注释生成器 -->
+        <commentGenerator type="com.origin.other.MySQLCommentGenerator">
+            <property name="author" value="lixiewen"/>
+            <property name="dateFormat" value="yyyy-MM-dd"/>
         </commentGenerator>
         <!-- jdbcConnection：指定如何连接到目标数据库 -->
         <!--<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
@@ -29,6 +35,8 @@
                         connectionURL="jdbc:mysql://localhost:3306/scott"
                         userId="root"
                         password="root">
+            <!-- 设置 useInformationSchema 属性为 true就可以读取表的注释了 -->
+            <property name="useInformationSchema" value="true" />
         </jdbcConnection>
         <!-- 是否把JDBC DECIMAL 和NUMERIC 类型解析为java.math.BigDecimal -->
         <javaTypeResolver>

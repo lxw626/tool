@@ -11,9 +11,6 @@ import lombok.ToString;
 public class ColumnInfo {
     private String columnName;
     private String columnType;
-    private String fieldName;
-    private String fieldType;
-    private String jdbcType;
     private String columnComment;
     // 是否是主键
     private Boolean primaryKey;
@@ -23,4 +20,7 @@ public class ColumnInfo {
     private Integer precision;
     // 小数位数
     private Integer scale;
+    private String fieldName;
+    private String fieldType;
+    private String jdbcType;
 }

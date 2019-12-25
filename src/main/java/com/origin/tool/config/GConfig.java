@@ -1,8 +1,6 @@
 package com.origin.tool.config;
 
 
-import com.origin.tool.core.ColumnInfo;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,16 +22,16 @@ public class GConfig {
     public static String DBType = "oracle";
     //全局主键配置(可选配置),如果指定则用指定的,如果没有指定则用获取到的第一个
 //    mysql数据库配置部分
-//    public static String DRIVER = "com.mysql.jdbc.Driver";
-//    public static String URL = "jdbc:mysql://localhost:3306/mytool?useUnicode=true&characterEncoding=utf8&useSSL=true";
-//    public static String USERNAME = "root";
-//    public static String PASSWORD = "root";
+    public static String DRIVER = "com.mysql.jdbc.Driver";
+    public static String URL = "jdbc:mysql://172.17.163.142:3306/riil_product?useUnicode=true&characterEncoding=utf8&useSSL=true";
+    public static String USERNAME = "riil";
+    public static String PASSWORD = "r4rfde32wsaq1";
 
     //  oracle数据库配置
-    public static String DRIVER = "oracle.jdbc.driver.OracleDriver";
-    public static String URL = "jdbc:oracle:thin:@//localhost:1521/ORCL";
-    public static String USERNAME = "scott";
-    public static String PASSWORD = "tiger";
+//    public static String DRIVER = "oracle.jdbc.driver.OracleDriver";
+//    public static String URL = "jdbc:oracle:thin:@//localhost:1521/ORCL";
+//    public static String USERNAME = "scott";
+//    public static String PASSWORD = "tiger";
 
     //    日期或者时间戳转为String
     public static final boolean date2String = false;

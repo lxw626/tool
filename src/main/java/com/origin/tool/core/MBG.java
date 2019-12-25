@@ -17,9 +17,11 @@ public class MBG {
     private String password = "root";
     private String targetRuntime = "MyBatis3Simple";
     private String entityPackage = "com.origin.tool.entity";
-    private String rootClass = "com.origin.tool.entity.BasicEntity";
+//    private String rootClass = "com.origin.tool.entity.BasicEntity";
+    private String rootClass;
     private String mapperPackage = "com.origin.tool.mapper";
-    private String rootInterface = "com.origin.tool.mapper.BasicMapper";
+//    private String rootInterface = "com.origin.tool.mapper.BasicMapper";
+    private String rootInterface;
     private String xmlPackage = "com.origin.tool.mapper";
     private Boolean serializableSwitch = true;
     private Boolean toStringSwitch = true;
@@ -32,7 +34,8 @@ public class MBG {
     private String xmlPath = "";
     private List<TableConfig> tableConfigs = new ArrayList<>();
 
-    public MBG addTableConfig(TableConfig  tableConfig) {
+    public MBG addTableConfig(String tableName,String entityName) {
+        TableConfig tableConfig = new TableConfig(tableName,entityName);
         tableConfigs.add(tableConfig);
         return this;
     }

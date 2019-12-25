@@ -12,7 +12,7 @@ import java.util.List;
 
 public class MBGUtil {
     public static void generate(MBG mbg) throws Exception {
-        List<String> warnings = new ArrayList<String>();
+        List<String> warnings = new ArrayList<>();
         boolean overwrite = true;
         Configuration config = new Configuration();
         Context context = new Context(ModelType.CONDITIONAL);

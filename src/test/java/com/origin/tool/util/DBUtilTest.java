@@ -14,7 +14,12 @@ public class DBUtilTest {
     public void getTableNamesForMysql() {
        dbConfig("mysql");
         List<String> tableNames = DBUtil.getTableNames("mysql");
-        tableNames.forEach((tableName)->System.out.println(tableName));
+//        tableNames.forEach((tableName)->System.out.println(tableName));
+        for (String tableName : tableNames) {
+            if(tableName.contains("instance")){
+                System.out.println(tableName);
+            }
+        }
     }
     @Test
     public void getTableNamesForOracle() {
@@ -25,8 +30,8 @@ public class DBUtilTest {
     @Test
     public void getColumnInfosForMysql() {
         dbConfig("mysql");
-        List<ColumnInfo> menus = DBUtil.getColumnInfos("menu");
-        menus.forEach((menu)->System.out.println(menu));
+        List<ColumnInfo> emps = DBUtil.getColumnInfos("emp");
+        emps.forEach((emp)->System.out.println(emp));
 
     }
     @Test
@@ -50,9 +55,9 @@ public class DBUtilTest {
         }else if("mysql".equals(dbType)){
             GConfig.DBType = "mysql";
             GConfig.DRIVER = "com.mysql.jdbc.Driver";
-            GConfig.URL = "jdbc:mysql://localhost:3306/mytool?useUnicode=true&characterEncoding=utf8&useSSL=true";
-            GConfig.USERNAME = "root";
-            GConfig.PASSWORD = "root";
+            GConfig.URL = "jdbc:mysql://172.17.163.142:3306/riil_product?useUnicode=true&characterEncoding=utf8&useSSL=true";
+            GConfig.USERNAME = "riil";
+            GConfig.PASSWORD = "r4rfde32wsaq1";
         }
 
     }

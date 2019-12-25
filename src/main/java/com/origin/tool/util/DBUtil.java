@@ -54,13 +54,13 @@ public class DBUtil {
      * @return
      */
     public static List<ColumnInfo> getColumnInfos(String tableName) {
+        List<ColumnInfo> columnInfos = Collections.emptyList();
         if ("oracle".equals(GConfig.DBType.toLowerCase())) {
-            return getColumnInfosForOracle(tableName);
+            columnInfos = getColumnInfosForOracle(tableName);
         } else if("mysql".equals(GConfig.DBType.toLowerCase())){
-            return getColumnInfosForMysql(tableName);
-        }else{
-            return Collections.emptyList();
+            columnInfos = getColumnInfosForMysql(tableName);
         }
+        return columnInfos;
     }
 
 
@@ -159,7 +159,7 @@ public class DBUtil {
                         columnInfo.setPrecision(Integer.parseInt(typeAndLength.substring(typeAndLength.indexOf("(")+1, typeAndLength.length() - 2)));
                         columnInfo.setScale(0);
                     }else{
-                        String[] split = typeAndLength.substring(typeAndLength.indexOf("("), typeAndLength.length() - 2).split(",");
+                        String[] split = typeAndLength.substring(typeAndLength.indexOf("(")+1, typeAndLength.length() - 1).split(",");
                         columnInfo.setPrecision(Integer.parseInt(split[0]));
                         columnInfo.setScale(Integer.parseInt(split[1]));
                     }

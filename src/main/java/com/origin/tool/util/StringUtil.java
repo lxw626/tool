@@ -4,6 +4,20 @@ import java.util.Map;
 import java.util.Set;
 
 public class StringUtil {
+    /**
+     * 判断字符串不为空白
+     * 1.如果字符串为null，返回false
+     * 2.如果字符串为空串返回false
+     * 3.如果字符串只有空格返回false
+     * @param str
+     * @return
+     */
+    public static boolean isNotBlank(String str){
+        if(str == null || str.trim().isEmpty()){
+            return false;
+        }
+        return true;
+    }
     //首字母转小写
     public static String toLowerCaseFirstOne(String s){
         if(Character.isLowerCase(s.charAt(0)))
@@ -22,7 +36,7 @@ public class StringUtil {
     }
     /**
      * y_yyy==>yYyy
-     * 下划线命名分格转为驼峰命名风格
+     * 下划线命名风格转为驼峰命名风格
      * @param s
      * @return
      */
@@ -38,31 +52,6 @@ public class StringUtil {
     	return s;
     }
 
-    /**
-     * 非空判断
-     * @param s
-     * @return
-     */
-    public static boolean isNotEmpty(String s){
-        if(s != null && s.trim().length()>0){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    /**
-     * 空判断
-     * @param s
-     * @return
-     */
-    public static boolean isEmpty(String s){
-        if(s != null && s.trim().length()>0){
-            return false;
-        }else{
-            return true;
-        }
-    }
     public static boolean isChinese(char c) {
 
         Character.UnicodeBlock ub = Character.UnicodeBlock.of(c);
