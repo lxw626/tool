@@ -23,11 +23,11 @@ public class VueUtil {
     private static String mainJsPath = "src/main/resources/vue/main.js";
     private static String indexHtmlPath = "src/main/resources/static/index.html";
     private static String indexHtmlMbPath = "src/main/resources/vue/indexmb.html";
-    private static List<String> mainJs = new ArrayList<>();
     private static String appId;
     private static String tab = "    ";
     private static Map<String,VueComponent> vueComponentMap = new HashMap<>();
     private static List<VueComponent> vueComponents = new ArrayList<>();
+    private static List<String> mainJs = new ArrayList<>();
 
     // 扫描vue下的所有.vue文件解析为VueComponent
     static {
