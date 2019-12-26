@@ -3,7 +3,8 @@ package com.origin.tool.constant;
 
 
 
-import com.origin.tool.util.DateUtil;
+
+import util.MDateUtil;
 
 import java.util.Date;
 
@@ -45,7 +46,7 @@ public interface GntityModel {
             " * <p>Copyright: Copyright (c) 2018</p>\n" +
             " * <p>Company: sgai</p>\n" +
             " * @author： lixiewen\n" +
-            " * @version "+ DateUtil.Date2ShortString(new Date())+"\n" +
+            " * @version "+ MDateUtil.Date2ShortString(new Date())+"\n" +
             " */"+
             "\n" +
             "public class <entityClassName>  extends  AbstractEntity {\n" +

@@ -1,8 +1,8 @@
 package com.origin.tool.service;
 
-import com.origin.tool.core.MBG;
-import com.origin.tool.util.MBGUtil;
 import org.springframework.stereotype.Service;
+import util.mbg.MBG;
+import util.mbg.MBGUtil;
 
 @Service
 public class GeneratorService {

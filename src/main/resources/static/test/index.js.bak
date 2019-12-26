@@ -1,0 +1,52 @@
+axios.get("http://localhost:8888/getVueTemplate").then(function(res){
+    let template = res.data.templates
+    let body = document.getElementsByTagName("body")[0].innerHTML += template;
+    debugger
+    // let emp = {
+    //     template:'#emp',
+    //     data(){
+    //         return {
+    //             msg:'我是emp'
+    //         }
+    //     }
+    // }
+    // let dept = {
+    //     template:'#dept',
+    //     data(){
+    //         return {
+    //             msg:'我是dept'
+    //         }
+    //     },
+    //     components:{
+    //         emp
+    //     }
+    // }
+    let app = new Vue({
+        el:'#app',
+        data(){
+            return {
+                msg:'我是app'
+            }
+        },
+        // components:{
+        //     dept
+        // }
+    })
+})
+debugger
+// let template = "<div id=\"app\">\n" +
+//     "    父组件:{{msg}}\n" +
+//     "   <dept></dept>\n" +
+//     "\n" +
+//     "</div>\n" +
+//     "<template id=\"dept\">\n" +
+//     "    <div>\n" +
+//     "        子组件:{{msg}}\n" +
+//     "        <emp></emp>\n" +
+//     "    </div>\n" +
+//     "</template>\n" +
+//     "<template id=\"emp\">\n" +
+//     "    <div>\n" +
+//     "        子组件:{{msg}}\n" +
+//     "    </div>\n" +
+//     "</template>"

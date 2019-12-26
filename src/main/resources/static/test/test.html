@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta charset="UTF-8"> 
+  <title>Title</title> 
+  <script src="/js/vue.js"></script> 
+ </head> 
+ <body>  
+  <div id="app">
+    父组件:{{msg}} 
+   <dept></dept> 
+  </div>
+  <template id="Emp"> 
+   <div>
+     {{msg}} 
+   </div> 
+  </template>
+  <div id="app">
+    父组件:{{msg}} 
+   <dept></dept> 
+  </div>
+  <template id="Emp"> 
+   <div>
+     {{msg}} 
+   </div> 
+  </template>
+  <template id="Dept"> 
+   <div>
+     {{msg}} 
+    <emp></emp> 
+   </div> 
+  </template>
+ </body>
+</html>
+<script>
+    let Emp =  {
+        template:'#Emp',
+        data() {
+            return {
+                msg: '我是emp,我修改了,生效了吗???'
+            }
+        }
+    }
+    let Dept =  {
+        template:'#Dept',
+        data() {
+            return {
+                msg: '我是dept'
+            }
+        },
+        components: {
+            Emp
+        }
+    }
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                msg: "我是app"
+            }
+        },
+        components: {
+            Dept
+        }
+    
+    })
+</script>

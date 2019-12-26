@@ -1,7 +1,7 @@
 package com.origin.tool.service;
 
-import com.origin.tool.core.MBG;
 import org.junit.Test;
+import util.mbg.MBG;
 
 /*@RunWith(SpringRunner.class)
 @SpringBootTest*/
@@ -12,14 +12,14 @@ public class GeneratorServiceTest {
     GeneratorService generatorService = new GeneratorService();
 
 
-    @Test
-    public void genertedByMyBatis() throws Exception {
-        MBG mbg = new MBG();
-        mbg.addTableConfig("emp","Emp").addTableConfig("dept","Dept");
-        generatorService.genertedByMyBatis(mbg);
-    }
-    @Test
-    public void genertedByMyBatisWithXml() throws Exception {
-        generatorService.genertedByMyBatisWithXml();
-    }
+//    @Test
+//    public void genertedByMyBatis() throws Exception {
+//        MBG mbg = new MBG();
+//        mbg.addTableConfig("emp","Emp").addTableConfig("dept","Dept");
+//        generatorService.genertedByMyBatis(mbg);
+//    }
+//    @Test
+//    public void genertedByMyBatisWithXml() throws Exception {
+//        generatorService.genertedByMyBatisWithXml();
+//    }
 }
